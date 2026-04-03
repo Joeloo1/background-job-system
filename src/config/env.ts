@@ -10,4 +10,8 @@ export const config = {
   Redis_Password: process.env.REDIS_PASSWORD,
   Redis_db: Number(process.env.REDIS_DB),
   DB: process.env.DATABASE_URL,
+  Email_User: process.env.EMAIL_USER,
+  Email_Password: process.env.EMAIL_PASS,
+  Email_Host: process.env.EMAIL_HOST,
+  Email_Port: Number(process.env.EMAIL_PORT),
 };
