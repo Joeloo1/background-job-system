@@ -5,6 +5,8 @@ import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 
 import { config } from "./config/env";
+import jobsRouter from "./routes/jobs.routes";
+import { serverAdapter } from "./config/bull-board";
 
 const app: Express = express();
 
@@ -26,5 +28,7 @@ const limiter = rateLimit({
 });
 
 app.use("/api", limiter);
+app.use("/api/jobs", jobsRouter);
+app.use("/admin/queues", serverAdapter.getRouter());
 
 export default app;
